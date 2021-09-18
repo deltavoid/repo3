@@ -24,7 +24,6 @@ message("CMAKE_CURRENT_LIST_DIR: ${CMAKE_CURRENT_LIST_DIR}")
 add_executable(binary3
     binary3.c
 )
-
 target_link_libraries(binary3
     library3
     # Repo1::library1

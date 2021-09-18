@@ -26,8 +26,8 @@ add_library(library3 STATIC
 )
 target_include_directories(library3
     PUBLIC
-        ../../
-        # $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/../>
+        # ../../
+        $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/../>
     
 )
 target_link_libraries(library3
