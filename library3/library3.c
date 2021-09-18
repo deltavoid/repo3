@@ -11,7 +11,7 @@ void repo3_library3_display()
 {
     printf("repo3_library3_display: 1\n");
 
-    // repo1_library1_display();
+    repo1_library1_display();
 
     printf("repo3_library3_display: 2\n");
 }

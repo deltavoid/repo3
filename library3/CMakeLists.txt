@@ -30,7 +30,7 @@ target_include_directories(library3
         # $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/../>
     
 )
-# target_link_libraries(library2
-#     PUBLIC
-#         Repo1::library1
-# )
+target_link_libraries(library3
+    PUBLIC
+        Repo1::library1
+)
