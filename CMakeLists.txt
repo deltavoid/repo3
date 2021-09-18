@@ -34,11 +34,11 @@ message("CMAKE_TOOLCHAIN_FILE: ${CMAKE_TOOLCHAIN_FILE}")
 
 # dependencies
 
-find_package(Repo1 REQUIRED)
+# find_package(Repo1 REQUIRED)
 
-if (NOT TARGET Repo1::library1)
-  message("not find Repo1::library1")
-endif ()
+# if (NOT TARGET Repo1::library1)
+#   message("not find Repo1::library1")
+# endif ()
 
 find_package(Repo2 REQUIRED)
 
