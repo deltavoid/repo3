@@ -22,4 +22,4 @@ clean:
 
 
 run: build
-	$(BUILD_DIR)/binary2/binary2
+	$(BUILD_DIR)/binary3/binary3

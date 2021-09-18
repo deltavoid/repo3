@@ -1,8 +1,5 @@
-cmake_minimum_required (VERSION 3.5)
 
-project(repo3
-    VERSION 1.0
-)
+# project(binary3)
 
 
 
@@ -18,31 +15,17 @@ message("CMAKE_CURRENT_SOURCE_DIR: ${CMAKE_CURRENT_SOURCE_DIR}")
 message("CMAKE_CURRENT_BINARY_DIR: ${CMAKE_CURRENT_BINARY_DIR}")
 message("CMAKE_CURRENT_LIST_DIR: ${CMAKE_CURRENT_LIST_DIR}")
 
-message("CMAKE_PREFIX_PATH: ${CMAKE_PREFIX_PATH}")
-message("CMAKE_MODULE_PATH: ${CMAKE_MODULE_PATH}")
-message("CMAKE_TOOLCHAIN_FILE: ${CMAKE_TOOLCHAIN_FILE}")
 
-
-
-
-
-#configurations
-
-
-
-
-
-# dependencies
-
-find_package(Repo1 REQUIRED)
-
-if (NOT TARGET Repo1::library1)
-  message("not find Repo1::library1")
-endif ()
 
 
 
 # targets and directories
-add_subdirectory(library3)
-add_subdirectory(binary3)
 
+add_executable(binary3
+    binary3.c
+)
+
+target_link_libraries(binary3
+    library3
+    # Repo1::library1
+)
