@@ -59,32 +59,29 @@ add_subdirectory(binary3)
 
 # export and install
 
-include(CMakePackageConfigHelpers)
 
-set(CMAKE_INSTALL_INCLUDEDIR include)
-set(CMAKE_INSTALL_LIBDIR lib)
-set(install_cmakedir ${CMAKE_INSTALL_LIBDIR}/cmake/repo3)
+
+# set(CMAKE_INSTALL_INCLUDEDIR include)
+# set(CMAKE_INSTALL_LIBDIR lib)
+# set(install_cmakedir ${CMAKE_INSTALL_LIBDIR}/cmake/repo3)
 
 
 install(
     TARGETS
         library3
     EXPORT repo3-export
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    LIBRARY DESTINATION lib/repo3
+    ARCHIVE DESTINATION lib/repo3
 )
 
-# install(
-#     EXPORT repo3-export
-#     FILE Repo3Targets.cmake
-#     NAMESPACE Repo3::
-#     DESTINATION ${install_cmakedir}
-# )
 
 
-
-
-
+install(
+    EXPORT repo3-export
+    FILE Repo3Targets.cmake
+    NAMESPACE Repo3::
+    DESTINATION lib/cmake/repo3
+)
 
 export(
     EXPORT repo3-export
@@ -96,18 +93,32 @@ export(PACKAGE Repo3)
 
 
 
+include(CMakePackageConfigHelpers)
+
 configure_package_config_file(
     ${CMAKE_CURRENT_LIST_DIR}/Repo3Config.cmake.in
     ${CMAKE_CURRENT_BINARY_DIR}/Repo3Config.cmake
-    INSTALL_DESTINATION ${install_cmakedir}
+    INSTALL_DESTINATION lib/cmake/repo3
+)
+
+# the config.cmake here is not suitable for installation
+install(
+  FILES ${CMAKE_CURRENT_BINARY_DIR}/Repo3Config.cmake
+  DESTINATION lib/cmake/repo3
+)
+
+write_basic_package_version_file(
+    ${CMAKE_CURRENT_BINARY_DIR}/Repo3ConfigVersion.cmake
+    VERSION ${PROJECT_VERSION}
+    COMPATIBILITY ExactVersion
+)
+
+install(
+  FILES ${CMAKE_CURRENT_BINARY_DIR}/Repo3ConfigVersion.cmake
+  DESTINATION "lib/cmake/repo3"
 )
 
 
-# write_basic_package_version_file(
-#     ${CMAKE_CURRENT_BINARY_DIR}/Repo3ConfigVersion.cmake
-#     VERSION ${PROJECT_VERSION}
-#     COMPATIBILITY ExactVersion
-# )
 
 
 
