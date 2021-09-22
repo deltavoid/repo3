@@ -119,6 +119,12 @@ install(
 )
 
 
+install(
+  FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/library3/public/library3.h
+  DESTINATION "include/repo3/library3/public"
+)
+
 
 
 
