@@ -23,10 +23,14 @@ message("CMAKE_MODULE_PATH: ${CMAKE_MODULE_PATH}")
 message("CMAKE_TOOLCHAIN_FILE: ${CMAKE_TOOLCHAIN_FILE}")
 
 
+# dependencies
+
 include(CMakeFindDependencyMacro)
 
 find_dependency(Repo2 REQUIRED)
 
+
+# targets
 
 if (NOT TARGET Repo3::library3)
   include("${CMAKE_CURRENT_LIST_DIR}/Repo3Targets.cmake")
