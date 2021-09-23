@@ -127,17 +127,3 @@ install(
     ${CMAKE_CURRENT_SOURCE_DIR}/library3/public/library3.h
   DESTINATION "include/repo3/library3/public"
 )
-
-
-
-
-
-#
-# Packaging.
-#
-
-# set(CPACK_PACKAGE_VERSION_MAJOR ${PROJECT_VERSION_MAJOR})
-# set(CPACK_PACKAGE_VERSION_MINOR ${PROJECT_VERSION_MINOR})
-# set(CPACK_PACKAGE_VERSION_PATCH ${PROJECT_VERSION_PATCH})
-
-# include(CPack)

@@ -32,6 +32,5 @@ target_include_directories(library3
 )
 target_link_libraries(library3
     PUBLIC
-        # Repo1::library1
         Repo2::library2
 )
