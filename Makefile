@@ -25,6 +25,11 @@ $(BUILD_DIR)/Makefile: Makefile
 clean:	
 	rm -rf $(BUILD_DIR)
 
+uninstall:
+	-rm -rf /usr/local/lib/repo3
+	-rm -rf /usr/local/lib/cmake/repo3
+	-rm -rf /usr/local/include/repo3
+
 
 run: build
 	$(BUILD_DIR)/binary3/binary3
