@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.5)
+cmake_minimum_required(VERSION 3.5)
 
 project(repo3
     VERSION 1.0
@@ -34,18 +34,20 @@ message("CMAKE_TOOLCHAIN_FILE: ${CMAKE_TOOLCHAIN_FILE}")
 
 # dependencies
 
-# find_package(Repo1 REQUIRED)
 
-# if (NOT TARGET Repo1::library1)
-#   message("not find Repo1::library1")
-# endif ()
+find_package(Repo2 REQUIRED)
 
-# find_package(Repo2 REQUIRED)
+if (NOT TARGET Repo2::library2)
+    message("not find Repo2::library2")
+endif ()
 
-# if (NOT TARGET Repo2::library2)
-#   message("not find Repo2::library2")
-# endif ()
-include (Repo3FindDeps.cmake)
+# for Repo3FindDeps.cmake could not easily be put to ${CMAKE_BINARY_PATH}, 
+# so just directly write find_package
+# include (Repo3FindDeps.cmake)
+
+
+
+
 
 
 # targets and directories
@@ -89,7 +91,8 @@ export(
     NAMESPACE Repo3::
 )
 
-export(PACKAGE Repo3)
+# export(PACKAGE Repo3)
+
 
 
 
